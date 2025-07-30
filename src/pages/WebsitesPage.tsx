@@ -143,12 +143,12 @@ const WebsitesPage = () => {
                         <p className="text-lg text-gray-600 mb-8">
                             See how we've helped restaurants and cafes like yours increase customer satisfaction and streamline operations with custom digital menu solutions.
                         </p>
-                        <div className="inline-flex items-center px-4 py-2 bg-forest-50 border border-forest-200 rounded-lg">
-                            <span className="text-sm text-forest-700 font-medium">
+                        <div className="flex flex-col sm:flex-row items-center sm:items-start px-4 py-2 bg-forest-50 border border-forest-200 rounded-lg sm:flex-nowrap">
+                            <span className="text-sm text-forest-700 font-medium sm:mr-2">
                                 For the best experience, click this icon
                             </span>
-                            <ExternalLink className="w-4 h-4 text-forest-600 mx-2" />
-                            <span className="text-sm text-forest-700 font-medium">
+                            <ExternalLink className="w-4 h-4 text-forest-600 mx-2 sm:mx-0" />
+                            <span className="text-sm text-forest-700 font-medium sm:ml-2">
                                 to view the live website
                             </span>
                         </div>
