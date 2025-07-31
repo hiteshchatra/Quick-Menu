@@ -1,10 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Menu, X, Phone, ArrowLeft } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Scroll to top when location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  const handleSectionNavigation = (sectionId: string) => {
+    if (location.pathname === '/') {
+      // If already on home page, scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If on different page, navigate to home then scroll
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+    setIsMenuOpen(false);
+  };
+
+  const isOnSubPage = location.pathname !== '/';
 
   return (
     <motion.header
@@ -22,13 +51,51 @@ const Header = () => {
             </Link>
           </div>
 
+          {/* Back Button for Sub Pages */}
+          {/* {isOnSubPage && (
+            <div className="hidden md:flex items-center">
+              <button
+                onClick={() => navigate('/')}
+                className="flex items-center text-gray-700 hover:text-forest-600 transition-colors duration-300 mr-8"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Home
+              </button>
+            </div>
+          )} */}
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link to="/#how-it-works" className="text-gray-700 hover:text-forest-600 transition-colors duration-300">How It Works</Link>
-            <Link to="/#pricing" className="text-gray-700 hover:text-forest-600 transition-colors duration-300">Pricing</Link>
-            <Link to="/websites" className="text-gray-700 hover:text-forest-600 transition-colors duration-300">Our Work</Link>
-            <Link to="/#samples" className="text-gray-700 hover:text-forest-600 transition-colors duration-300">Samples</Link>
-            <Link to="/#contact" className="text-gray-700 hover:text-forest-600 transition-colors duration-300">Contact</Link>
+            <button
+              onClick={() => handleSectionNavigation('how-it-works')}
+              className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
+            >
+              How It Works
+            </button>
+            <button
+              onClick={() => handleSectionNavigation('pricing')}
+              className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
+            >
+              Pricing
+            </button>
+            <Link
+              to="/websites"
+              className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
+            >
+              Our Work
+            </Link>
+            <button
+              onClick={() => handleSectionNavigation('samples')}
+              className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
+            >
+              Samples
+            </button>
+            <button
+              onClick={() => handleSectionNavigation('contact')}
+              className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
+            >
+              Contact
+            </button>
           </nav>
 
           {/* CTA Button */}
@@ -63,11 +130,49 @@ const Header = () => {
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
             <div className="flex flex-col space-y-4">
-              <Link to="/#how-it-works" className="text-gray-700 hover:text-forest-600 transition-colors duration-300">How It Works</Link>
-              <Link to="/#pricing" className="text-gray-700 hover:text-forest-600 transition-colors duration-300">Pricing</Link>
-              <Link to="/websites" className="text-gray-700 hover:text-forest-600 transition-colors duration-300">Our Work</Link>
-              <Link to="/#samples" className="text-gray-700 hover:text-forest-600 transition-colors duration-300">Samples</Link>
-              <Link to="/#contact" className="text-gray-700 hover:text-forest-600 transition-colors duration-300">Contact</Link>
+              {isOnSubPage && (
+                <button
+                  onClick={() => {
+                    navigate('/');
+                    setIsMenuOpen(false);
+                  }}
+                  className="flex items-center text-gray-700 hover:text-forest-600 transition-colors duration-300 pb-2 border-b border-gray-200"
+                >
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back to Home
+                </button>
+              )}
+              <button
+                onClick={() => handleSectionNavigation('how-it-works')}
+                className="text-gray-700 hover:text-forest-600 transition-colors duration-300 text-left"
+              >
+                How It Works
+              </button>
+              <button
+                onClick={() => handleSectionNavigation('pricing')}
+                className="text-gray-700 hover:text-forest-600 transition-colors duration-300 text-left"
+              >
+                Pricing
+              </button>
+              <Link
+                to="/websites"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
+              >
+                Our Work
+              </Link>
+              <button
+                onClick={() => handleSectionNavigation('samples')}
+                className="text-gray-700 hover:text-forest-600 transition-colors duration-300 text-left"
+              >
+                Samples
+              </button>
+              <button
+                onClick={() => handleSectionNavigation('contact')}
+                className="text-gray-700 hover:text-forest-600 transition-colors duration-300 text-left"
+              >
+                Contact
+              </button>
               <a
                 href="tel:+1234567890"
                 className="flex items-center px-4 py-2 bg-forest-600 text-white font-medium rounded-lg hover:bg-forest-700 transition-all duration-300 shadow-md hover:shadow-lg w-fit"

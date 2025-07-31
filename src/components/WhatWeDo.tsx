@@ -39,11 +39,13 @@ const WhatWeDo = () => {
   return (
     <section className="py-20 bg-white" id="what-we-do">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
-          {...fadeInUp}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-forest-700 mb-4 drop-shadow-lg tracking-tight bg-gradient-to-r from-forest-600 to-sage-500 bg-clip-text text-transparent">
             What We Do
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -73,7 +75,7 @@ const WhatWeDo = () => {
                   <p className="text-gray-600">{service.description}</p>
                 </div>
               </div>
-              
+
               <ul className="space-y-3">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center">

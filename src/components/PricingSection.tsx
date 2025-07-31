@@ -44,13 +44,13 @@ const PricingSection = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-warm-50 to-white" id="pricing">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-forest-700 mb-4 drop-shadow-lg tracking-tight bg-gradient-to-r from-forest-600 to-sage-500 bg-clip-text text-transparent">
             Simple One-Time Pricing — No Hidden Costs
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -62,9 +62,8 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <motion.div
               key={index}
-              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8 ${
-                plan.popular ? 'ring-2 ring-forest-500 shadow-xl' : ''
-              }`}
+              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8 ${plan.popular ? 'ring-2 ring-forest-500 shadow-xl' : ''
+                }`}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
@@ -81,7 +80,7 @@ const PricingSection = () => {
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
                 <p className="text-gray-600 mb-4">{plan.subtitle}</p>
-                
+
                 <div className="flex items-center justify-center mb-2">
                   <span className="text-2xl text-gray-400 line-through mr-2">${plan.originalPrice}</span>
                   <span className="text-4xl font-bold text-forest-600">${plan.price}</span>
@@ -100,11 +99,10 @@ const PricingSection = () => {
 
               <a
                 href="#contact"
-                className={`w-full inline-flex items-center justify-center px-6 py-4 rounded-lg font-semibold transition-colors ${
-                  plan.popular
+                className={`w-full inline-flex items-center justify-center px-6 py-4 rounded-lg font-semibold transition-colors ${plan.popular
                     ? 'bg-forest-600 text-white hover:bg-forest-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300'
                     : 'bg-warm-100 text-gray-900 hover:bg-warm-200 shadow-md hover:shadow-lg transition-all duration-300'
-                }`}
+                  }`}
               >
                 {plan.popular && <Zap className="w-5 h-5 mr-2" />}
                 {plan.cta}
@@ -114,7 +112,7 @@ const PricingSection = () => {
         </div>
 
         {/* Money Back Guarantee */}
-        <motion.div 
+        <motion.div
           className="text-center mt-12"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

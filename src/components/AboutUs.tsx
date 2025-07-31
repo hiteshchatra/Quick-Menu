@@ -36,20 +36,20 @@ const AboutUs = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-forest-700 mb-4 drop-shadow-lg tracking-tight bg-gradient-to-r from-forest-600 to-sage-500 bg-clip-text text-transparent">
               About Quick Menu
             </h2>
             <p className="text-lg text-gray-600 mb-6">
-              We're a small team of designers and developers who love transforming boring menus 
-              into beautiful online experiences. Founded in 2022, we've helped hundreds of restaurants, 
+              We're a small team of designers and developers who love transforming boring menus
+              into beautiful online experiences. Founded in 2022, we've helped hundreds of restaurants,
               cafes, and bars modernize their dining experience.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              Our mission is simple: make digital menus accessible, affordable, and beautiful for 
-              every food business, regardless of size or budget. We believe great design shouldn't 
+              Our mission is simple: make digital menus accessible, affordable, and beautiful for
+              every food business, regardless of size or budget. We believe great design shouldn't
               be a luxury—it should be standard.
             </p>
-            
+
             {/* Team Image Placeholder */}
             <div className="relative">
               <div className="bg-gradient-to-br from-forest-100 to-sage-100 rounded-2xl p-8 text-center shadow-lg">
@@ -79,7 +79,7 @@ const AboutUs = () => {
           >
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-gray-900 mb-8">Why We Do What We Do</h3>
-              
+
               {values.map((value, index) => (
                 <motion.div
                   key={index}
@@ -100,7 +100,7 @@ const AboutUs = () => {
             </div>
 
             {/* Stats */}
-            <motion.div 
+            <motion.div
               className="mt-12 grid grid-cols-2 gap-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

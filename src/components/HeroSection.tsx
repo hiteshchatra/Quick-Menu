@@ -22,32 +22,38 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <motion.div 
+          <motion.div
             className="text-center lg:text-left"
             variants={staggerChildren}
             initial="initial"
             animate="animate"
           >
-            <motion.h1 
+            <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6"
               variants={fadeInUp}
             >
               Your Menu.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-forest-600 to-sage-500">
+              <span
+                className="text-transparent bg-clip-text bg-gradient-to-r from-forest-600 to-sage-500"
+                style={{
+                  textShadow:
+                    '0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1)'
+                }}
+              >
                 Reimagined
               </span>{' '}
               for the Digital World.
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl"
               variants={fadeInUp}
             >
-              We turn your printed menu into a custom digital menu and give you a scannable QR code. 
+              We turn your printed menu into a custom digital menu and give you a scannable QR code.
               Just one-time setup — no subscriptions ever.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6 sm:mb-8"
               variants={fadeInUp}
             >
@@ -59,7 +65,7 @@ const HeroSection = () => {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </a>
               <a
-                href="#samples"
+                href="/websites"
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-forest-600 font-semibold rounded-lg border-2 border-forest-600 hover:bg-forest-50 transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 <Play className="w-5 h-5 mr-2" />
@@ -68,7 +74,7 @@ const HeroSection = () => {
             </motion.div>
 
             {/* Guarantee Badge */}
-            <motion.div 
+            <motion.div
               className="inline-flex items-center px-4 sm:px-6 py-3 bg-sage-50 border border-sage-200 rounded-full shadow-sm"
               variants={fadeInUp}
             >
@@ -81,7 +87,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Right Content - Animated Phone Mockup */}
-          <motion.div 
+          <motion.div
             className="relative"
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
@@ -89,13 +95,13 @@ const HeroSection = () => {
           >
             <div className="relative max-w-sm mx-auto">
               {/* QR Code with Ripple Effect */}
-              <motion.div 
+              <motion.div
                 className="absolute -top-16 sm:-top-20 -left-16 sm:-left-20 w-24 sm:w-32 h-24 sm:h-32 bg-white rounded-lg shadow-xl p-3 sm:p-4 z-10"
-                animate={{ 
+                animate={{
                   scale: [1, 1.05, 1],
-                  rotate: [0, 2, 0] 
+                  rotate: [0, 2, 0]
                 }}
-                transition={{ 
+                transition={{
                   duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut"
@@ -104,14 +110,14 @@ const HeroSection = () => {
                 <div className="w-full h-full bg-gray-900 rounded flex items-center justify-center">
                   <div className="grid grid-cols-6 sm:grid-cols-8 gap-0.5 sm:gap-1">
                     {[...Array(36)].map((_, i) => (
-                      <div 
-                        key={i} 
+                      <div
+                        key={i}
                         className={`w-0.5 sm:w-1 h-0.5 sm:h-1 ${Math.random() > 0.3 ? 'bg-white' : 'bg-gray-900'}`}
                       />
                     ))}
                   </div>
                 </div>
-                
+
                 {/* Ripple Effect */}
                 <motion.div
                   className="absolute inset-0 border-2 border-forest-400 rounded-lg"
@@ -138,9 +144,9 @@ const HeroSection = () => {
                         <h3 className="text-sm sm:text-lg font-bold text-gray-900">Bella Vista Café</h3>
                         <p className="text-xs sm:text-sm text-gray-600">Authentic Italian Cuisine</p>
                       </div>
-                      
+
                       {/* Menu Items Animation */}
-                      <motion.div 
+                      <motion.div
                         className="space-y-2 sm:space-y-3"
                         animate={{ y: [0, -20, 0] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}

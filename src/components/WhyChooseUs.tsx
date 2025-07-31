@@ -49,13 +49,13 @@ const WhyChooseUs = () => {
   return (
     <section className="py-20 bg-white" id="why-choose-us">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-forest-700 mb-4 drop-shadow-lg tracking-tight bg-gradient-to-r from-forest-600 to-sage-500 bg-clip-text text-transparent">
             Why Choose Us
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -83,21 +83,21 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Comparison Table */}
-        <motion.div 
+        <motion.div
           className="bg-gradient-to-br from-warm-50 to-white rounded-2xl shadow-xl overflow-hidden overflow-x-auto"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
         >
           <div className="p-6 border-b border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 text-center">
+            <h3 className="text-2xl font-bold text-forest-600 text-center mb-2 drop-shadow-lg tracking-tight ">
               How We Compare
             </h3>
             <p className="text-gray-600 text-center mt-2">
               See why businesses choose us over DIY tools and freelancers
             </p>
           </div>
-          
+
           <div className="overflow-x-auto">
             <table className="w-full min-w-[600px]">
               <thead className="bg-gray-100">

@@ -33,13 +33,13 @@ const HowItWorks = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-warm-50 to-white" id="how-it-works">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-forest-700 mb-4 drop-shadow-lg tracking-tight bg-gradient-to-r from-forest-600 to-sage-500 bg-clip-text text-transparent">
             How It Works
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -50,7 +50,7 @@ const HowItWorks = () => {
         <div className="relative">
           {/* Connection Lines */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-sage-200 via-forest-200 via-warm-200 to-sage-300 transform -translate-y-1/2"></div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
               <motion.div
@@ -64,11 +64,11 @@ const HowItWorks = () => {
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-forest-600 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md">
                   {index + 1}
                 </div>
-                
+
                 <div className={`w-16 h-16 ${step.color} rounded-2xl flex items-center justify-center mx-auto mb-4 mt-4`}>
                   <step.icon className="w-8 h-8" />
                 </div>
-                
+
                 <h3 className="text-lg font-bold text-gray-900 mb-3">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
               </motion.div>
