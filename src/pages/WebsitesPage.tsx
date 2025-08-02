@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ExternalLink, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { pageSEO } from '../utils/seo';
 
 const WebsitesPage = () => {
     const [selectedWebsite, setSelectedWebsite] = useState<number | null>(null);
@@ -108,12 +110,14 @@ const WebsitesPage = () => {
     }
 
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-        >
-            <Header />
+        <>
+            <SEOHead config={pageSEO.websites} />
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+            >
+                <Header />
 
             {/* Hero Section */}
             <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-forest-50 to-sage-50">
@@ -243,7 +247,8 @@ const WebsitesPage = () => {
             </section>
 
             <Footer />
-        </motion.div>
+            </motion.div>
+        </>
     );
 };
 

@@ -1,9 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
 
 const NotFoundPage: React.FC = () => {
+  const notFoundSEO = {
+    title: "Page Not Found - Quick Menu | QR Menu Service",
+    description: "The page you're looking for doesn't exist. Return to Quick Menu's homepage to explore our QR code menu services for restaurants and cafes.",
+    canonical: "https://quickmenus.com/404"
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4">
+    <>
+      <SEOHead config={notFoundSEO} />
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
         <div className="mb-8">
           <h1 className="text-9xl font-bold text-indigo-600 mb-4">404</h1>
@@ -50,7 +59,8 @@ const NotFoundPage: React.FC = () => {
           </svg>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

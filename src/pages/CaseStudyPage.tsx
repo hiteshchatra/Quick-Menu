@@ -2,9 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Users, TrendingUp, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Star } from 'lucide-react';
+import { pageSEO } from '../utils/seo';
 
 const CaseStudyPage = () => {
   const fadeInUp = {
@@ -26,8 +28,10 @@ const CaseStudyPage = () => {
     })
   };
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <>
+      <SEOHead config={pageSEO.caseStudy} />
+      <div className="min-h-screen bg-white">
+        <Header />
 
       <div className="pt-20">
         {/* Back Button */}
@@ -292,7 +296,8 @@ const CaseStudyPage = () => {
       </div>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

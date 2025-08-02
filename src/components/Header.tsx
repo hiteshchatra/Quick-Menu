@@ -51,21 +51,8 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Back Button for Sub Pages */}
-          {/* {isOnSubPage && (
-            <div className="hidden md:flex items-center">
-              <button
-                onClick={() => navigate('/')}
-                className="flex items-center text-gray-700 hover:text-forest-600 transition-colors duration-300 mr-8"
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
-              </button>
-            </div>
-          )} */}
-
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-6">
             <button
               onClick={() => handleSectionNavigation('how-it-works')}
               className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
@@ -82,14 +69,26 @@ const Header = () => {
               to="/websites"
               className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
             >
-              Our Work
+              Portfolio
             </Link>
-            <button
-              onClick={() => handleSectionNavigation('samples')}
+            <Link
+              to="/case-study"
               className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
             >
-              Samples
-            </button>
+              Case Studies
+            </Link>
+            <Link
+              to="/demo"
+              className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
+            >
+              Works
+            </Link>
+            <Link
+              to="/blog"
+              className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
+            >
+              Blog
+            </Link>
             <button
               onClick={() => handleSectionNavigation('contact')}
               className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
@@ -101,7 +100,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="tel:+1234567890"
+              href="tel:+916351062703"
               className="flex items-center px-4 py-2 bg-forest-600 text-white font-medium rounded-lg hover:bg-forest-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
               <Phone className="w-4 h-4 mr-2" />
@@ -142,6 +141,7 @@ const Header = () => {
                   Back to Home
                 </button>
               )}
+              
               <button
                 onClick={() => handleSectionNavigation('how-it-works')}
                 className="text-gray-700 hover:text-forest-600 transition-colors duration-300 text-left"
@@ -159,14 +159,29 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
               >
-                Our Work
+                Portfolio
               </Link>
-              <button
-                onClick={() => handleSectionNavigation('samples')}
-                className="text-gray-700 hover:text-forest-600 transition-colors duration-300 text-left"
+              <Link
+                to="/case-study"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
               >
-                Samples
-              </button>
+                Case Studies
+              </Link>
+              <Link
+                to="/demo"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
+              >
+                Works
+              </Link>
+              <Link
+                to="/blog"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-700 hover:text-forest-600 transition-colors duration-300"
+              >
+                Blog
+              </Link>
               <button
                 onClick={() => handleSectionNavigation('contact')}
                 className="text-gray-700 hover:text-forest-600 transition-colors duration-300 text-left"
@@ -174,7 +189,7 @@ const Header = () => {
                 Contact
               </button>
               <a
-                href="tel:+1234567890"
+                href="tel:+916351062703"
                 className="flex items-center px-4 py-2 bg-forest-600 text-white font-medium rounded-lg hover:bg-forest-700 transition-all duration-300 shadow-md hover:shadow-lg w-fit"
               >
                 <Phone className="w-4 h-4 mr-2" />
